@@ -142,8 +142,9 @@ def import_scan(xlsfile):
 
 
 def main():
-    import_stig('RHEL5_STIG_V1R10-32bit.xlsx')
-    import_scan('RHEL5_172_22_83_165_32-bit_cc3clv_Jul_9_2015.xlsx')
+    #import_stig('RHEL5_STIG_V1R10-32bit.xlsx')
+    #import_scan('RHEL5_172_22_83_165_32-bit_cc3clv_Jul_9_2015.xlsx')
+    import_stig('RHEL6_STIG_V1R7.xlsx')
 
 
 if __name__ == "__main__":
