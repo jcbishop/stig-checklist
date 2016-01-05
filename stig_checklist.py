@@ -1,6 +1,6 @@
 __author__ = 'jbishop'
 import sqlite3
-import xlsxwriter
+import XlsxWriter
 import os, sys
 import subprocess
 
@@ -90,10 +90,10 @@ def run_stig_check():
     for stig_id in chklist_id:
         currow += 1
         x = stig_id[0]
-	print x
+        print x
         try:
-	    os.chdir("/opt/linux_stigs/rhel6/utils")
-	    cmd = "./stig_alt.sh -s {0} -c".format(x)	
+            os.chdir("/opt/linux_stigs/rhel6/utils")
+            cmd = "./stig_alt.sh -s {0} -c".format(x)
             output = subprocess.check_output(cmd, stderr=subprocess.STDOUT, shell=True)
             print(output)
             compliance = output
@@ -156,7 +156,7 @@ def write_report():
     c = stig_db.execute("SELECT * from checklist")
     fpath = os.path.curdir
     file = os.path.join(fpath,"stig_results.xlsx")
-    workbook = xlsxwriter.Workbook(file)
+    workbook = XlsxWriter.Workbook(file)
     worksheet = workbook.add_worksheet()
     row = 0
     col = 0
